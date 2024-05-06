@@ -7,8 +7,18 @@
 
 .navbar {
     color: darkgray;
-    padding-left: 15%;
+    padding-left: 5%;
 }
+
+    /* Стили панели навигации */
+    .navbar p {
+        color: darkgray;
+        padding-left: 15%;
+    }
+        /* Стили панели навигации при наведении мышью */
+        .navbar p:hover {
+            color: aliceblue;
+        }
 
 header {
     padding-left: 1%;
@@ -20,7 +30,25 @@ footer {
     bottom: 0;
     font-size: medium;
     color: dimgrey;
+    line-height: 66%;
+    padding-left: 1%;
 }
+
+form {
+    padding-left: 1%;
+}
+
+.input-field {
+    padding: 1px;
+    border: 3px solid #ccc;
+    /*border-radius: 2px;*/
+    transition: border-color 0.3s ease;
+}
+
+    .input-field.active {
+        border-color: #4CAF50;
+        box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    }
 
 aside {
     height: 100%; /* Высота в полный размер. Этот параметр можно убрать, если вы хотите выставлять высоту автоматически */
@@ -42,4 +70,19 @@ body {
 /* Комбинированный селектор - применяется ко всем элементам */
 header, footer, aside, body, .navbar, .video-container {
     font-family: 'Calibri', sans-serif;
+}
+
+/*Глобальные стили для хедеров на всём сайте*/
+header {
+    color: black;
+    padding-left: 1%;
+    padding-top: 1.2%;
+}
+
+h1 {
+    color: darkred
+}
+
+body {
+    background-color: #fffaed;
 }
