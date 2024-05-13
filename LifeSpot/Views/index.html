@@ -5,8 +5,38 @@
 	<title>LifeSpot</title>
 	<!--Подключение стилей по относительному пути из внешнего файла-->
 	<link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
+	<script>
+		// Prompt the user to enter their age
+		var age = prompt("Пожалуйста, введите ваш возраст:");
+
+		// Check if the user entered a valid age
+		if (age !== null && !isNaN(age)) {
+			// Convert the age to a number
+			age = parseInt(age);
+
+			// Check if the user is 18 or older
+			if (age >= 18) {
+				// Display a welcome message
+				alert("Добро пожаловать на LifeSpot " + new Date().toLocaleString());
+			} else {
+				// Display a message indicating the site is for users 18 or older
+				alert("К сожалению, наш сайт предназначен для пользователей старше 18 лет. Вы будете перенаправлены на сайт Google.");
+
+				// Redirect to Google
+				window.location.href = "https://www.google.com";
+			}
+		}
+		else {
+			// Display an error message if the user didn't enter a valid age
+			alert("Неверный возраст. Вы будете перенаправлены на сайт Google.");
+			window.location.href = "https://www.google.com";
+		}
+	</script>
 </head>
+
 <body>
+
+
 	<header id="header-index">
 		<!--Заголовок страницы-->
 		<h1>LifeSpot - прямые трансляции с улиц</h1>
@@ -28,8 +58,8 @@
 	<div class="bordered">
 		<!--Фреймы улиц-->
 		<div class="video-container">
-			<iframe width="480" height="315" src="https://www.youtube.com/embed/PlUGk-dcSFQ?si=U4bsTjow0j7QD4n8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-			<h3 class="video-title"> Санкт-Петербург</h3>
+			<iframe width="480" height="315" src="https://www.youtube.com/embed/bQwalAKrfWE?si=_G9J01Ea6Q5C0o4Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<h3 class="video-title"> Париж</h3>
 		</div>
 		<div class="video-container">
 			<iframe width="480" height="315" src="https://www.youtube.com/embed/srlpC5tmhYs?si=LBPFOlhjwfhiEPMT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
