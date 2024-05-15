@@ -5,33 +5,8 @@
 	<title>LifeSpot</title>
 	<!--Подключение стилей по относительному пути из внешнего файла-->
 	<link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
-	<script>
-		// Prompt the user to enter their age
-		var age = prompt("Пожалуйста, введите ваш возраст:");
-
-		// Check if the user entered a valid age
-		if (age !== null && !isNaN(age)) {
-			// Convert the age to a number
-			age = parseInt(age);
-
-			// Check if the user is 18 or older
-			if (age >= 18) {
-				// Display a welcome message
-				alert("Добро пожаловать на LifeSpot " + new Date().toLocaleString());
-			} else {
-				// Display a message indicating the site is for users 18 or older
-				alert("К сожалению, наш сайт предназначен для пользователей старше 18 лет. Вы будете перенаправлены на сайт Google.");
-
-				// Redirect to Google
-				window.location.href = "https://www.google.com";
-			}
-		}
-		else {
-			// Display an error message if the user didn't enter a valid age
-			alert("Неверный возраст. Вы будете перенаправлены на сайт Google.");
-			window.location.href = "https://www.google.com";
-		}
-	</script>
+	<!--<script src="../Static/JS/index.js"></script>-->
+	<script src="../Static/JS/index.js" defer></script>
 </head>
 
 <body>
