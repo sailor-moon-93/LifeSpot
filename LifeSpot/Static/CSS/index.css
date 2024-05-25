@@ -10,6 +10,7 @@
     height: 100%;
     padding-left: 5%;
     box-sizing: border-box;
+    display: block;
 }
 
 /* Стили панели навигации */
@@ -30,7 +31,7 @@ header {
 
 footer {
     position: absolute;
-    bottom: 0;
+    bottom: 1;
     font-size: medium;
     color: dimgrey;
     line-height: 66%;
@@ -67,6 +68,7 @@ aside {
 }
 
 body {
+    position: relative;
     padding-left: 11%;
 }
 
@@ -89,3 +91,8 @@ h1 {
 body {
     background-color: #fffaed;
 }
+
+.bordered {
+    position:relative;
+}
+
