@@ -6,33 +6,21 @@
     <!--Подключение стилей по относительному пути из внешнего файла-->
     <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
     <!--<script src="../Static/JS/index.js"></script>-->
-    <script src="../Static/JS/index.js" defer></script>
+    <script src="../Static/JS/index.js"></script>
 </head>
 
 <body>
     <header id="header-index">
+        <script>
+            getAge();
+        </script>
         <h1>LifeSpot - прямые трансляции с улиц</h1>
         <p>Покажем, что происходит прямо сейчас</p>
         <input type="text" id="search-input" size="50%">
+        <script>
+            searchEngine();
+        </script>
     </header>
-
-    <script>
-        const searchInput = document.getElementById('search-input');
-
-        searchInput.addEventListener('input', function () {
-            const inputString = searchInput.value.toLowerCase();
-            const elements = document.getElementsByClassName('video-container');
-
-            for (let i = 0; i < elements.length; i++) {
-                const videoText = elements[i].querySelector(".video-title").innerText;
-                if (!videoText.toLowerCase().includes(inputString)) {
-                    elements[i].style.display = 'none';
-                } else {
-                    elements[i].style.display = 'inline-block';
-                }
-            }
-        });
-    </script>
     <!--<form>
         Поле и кнопка для поиска
         <input type="text" id="myInput" placeholder="Поиск по сайту" class="input-field" onfocus="this.classList.add('active')" onblur="this.classList.remove('active')">

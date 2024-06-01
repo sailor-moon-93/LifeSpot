@@ -1,37 +1,78 @@
-﻿// Prompt the user to enter their age
-var age = prompt("Пожалуйста, введите ваш возраст:");
+﻿function getAge() {
+    // Prompt the user to enter their age
+    var age = prompt("Пожалуйста, введите ваш возраст:");
 
-// Create a new Map to store user data
-var userMap = new Map();
+    // Create a new Map to store user data
+    var userMap = new Map();
 
-// Check if the user entered a valid age
-if (age !== null && !isNaN(age)) {
-    // Convert the age to a number
-    age = parseInt(age);
+    // Check if the user entered a valid age
+    if (age !== null && !isNaN(age)) {
+        // Convert the age to a number
+        age = parseInt(age);
 
-    // Store the user's age in the Map
-    userMap.set('age', age);
+        // Store the user's age in the Map
+        userMap.set('age', age);
 
-    // Check if the user is 18 or older
-    if (age >= 18) {
-        // Display a welcome message
-        document.write("Добро пожаловать на LifeSpot " + new Date().toLocaleString());
+        // Check if the user is 18 or older
+        if (age >= 18) {
+            // Display a welcome message
+            alert("Добро пожаловать на LifeSpot " + new Date().toLocaleString());
 
-        // Store the login time in the Map
-        userMap.set('loginTime', new Date().toLocaleString());
+            // Store the login time in the Map
+            userMap.set('loginTime', new Date().toLocaleString());
+        } else {
+            // Display a message indicating the site is for users 18 or older
+            alert("К сожалению, наш сайт предназначен для пользователей старше 18 лет. Вы будете перенаправлены на сайт Google.");
+
+            // Redirect to Google
+            window.location.replace("https://www.google.com");
+        }
     } else {
-        // Display a message indicating the site is for users 18 or older
-        document.write("К сожалению, наш сайт предназначен для пользователей старше 18 лет. Вы будете перенаправлены на сайт Google.");
-
-        // Redirect to Google
+        // Display an error message if the user didn't enter a valid age
+        alert("Неверный возраст. Вы будете перенаправлены на сайт Google.");
         window.location.replace("https://www.google.com");
     }
-} else {
-    // Display an error message if the user didn't enter a valid age
-    document.write("Неверный возраст. Вы будете перенаправлены на сайт Google.");
-    window.location.replace("https://www.google.com");
+
+    // Output the user's age and login time
+    console.log("Пользователю " + userMap.get('age') + " лет, пользователь зашёл в " + userMap.get('loginTime'));
 }
 
-// Output the user's age and login time
-console.log("Пользователю " + userMap.get('age') + " лет, пользователь зашёл в " + userMap.get('loginTime'));
+function searchEngine() {
+    const searchInput = document.getElementById('search-input');
 
+    searchInput.addEventListener('input', function () {
+        const inputString = searchInput.value.toLowerCase();
+        const elements = document.getElementsByClassName('video-container');
+
+        for (let i = 0; i < elements.length; i++) {
+            const videoText = elements[i].querySelector(".video-title").innerText;
+            if (!videoText.toLowerCase().includes(inputString)) {
+                elements[i].style.display = 'none';
+            } else {
+                elements[i].style.display = 'inline-block';
+            }
+        }
+    });
+}
+
+function filterContent() {
+
+    // Сохраняем текст пользовательского запроса.
+    let inputString = document.getElementsByTagName('input')[0].value.toLowerCase();
+    // Находим контейнеры с видео, которые необходимо фильтровать
+    let elements = document.getElementsByClassName('video-container');
+
+    // Пробегаемся по контейнерам
+    for (let i = 0; i <= elements.length; i++) {
+        // Вытаскиваем текст описания видео, которое необходимо отфильтровать
+        let videoText = elements[i].querySelector(".video-title").innerText;
+        // Выполняем фильтрацию, сравнивая значения в нижнем регистре
+        if (!videoText.toLowerCase().includes(inputString.toLowerCase())) {
+            // Скрываем неподходящие
+            elements[i].style.display = 'none';
+        } else {
+            // Показываем подходящие
+            elements[i].style.display = 'inline-block';
+        }
+    }
+}
