@@ -54,3 +54,10 @@ function searchEngine() {
         }
     });
 }
+
+function instaSub()
+{
+    alert("Нравится LifeSpot? " + '\n' + "Подпишитесь на наш Instagram @lifespot999!");
+}
+
+setTimeout(instaSub, 30000);
