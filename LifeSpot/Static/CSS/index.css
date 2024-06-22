@@ -1,102 +1,102 @@
-﻿/* Простые селекторы*/
+﻿/* Комбинированный селектор - применяется ко всем элементам */
+header, footer, aside, body, .navbar, .video-container {
+    font-family: "Helvetica 65 Medium", sans-serif;
+}
+
+header, footer, body, .video-container {
+    background-color: linen;
+}
+
+/* Компоненты iframe со встроенным видео */
 .video-container {
     display: inline-block;
+    margin-top: 0.5em;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
+.review-container, .review-button {
+    display: inline-block;
+    margin-top: 0.5em;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
+.review-text {
+    display: block;
+    margin-top: 0.5em;
     padding-left: 1%;
     padding-top: 1%;
 }
 
 
-.navbar {
-    height: 100%;
-    position:fixed;
-    padding-left: 0%;
-    box-sizing: border-box;
-    display: block;
-}
-
 /* Стили панели навигации */
 .navbar p {
-    color: darkgrey;
+    color: darkgray;
     padding-left: 15%;
 }
 
-/* Стили панели навигации при наведении мышью */
-.navbar p:hover {
-    color: aliceblue;
-}
+    /* Стили панели навигации при наведении мышью */
+    .navbar p:hover {
+        color: aliceblue;
+    }
 
+/* Глобальные стили для хедеров на всём сайте */
 header {
+    color: black;
     padding-left: 1%;
     padding-top: 1.2%;
 }
+/* Стиль хедера для главной страницы имеет приоритет, 
+так как используется селектор по идентификатору */
+#header-index {
+    color: #44453f;
+}
 
+/* Стили футера */
 footer {
-    position: absolute;
-    bottom: 1;
+    position: relative;
+    bottom: 0;
     font-size: medium;
     color: dimgrey;
     line-height: 66%;
     padding-left: 1%;
-}
-
-form {
-    padding-left: 1%;
-}
-
-.input-field {
-    padding: 1px;
-    border: 3px solid #ccc;
-    /*border-radius: 2px;*/
-    transition: border-color 0.3s ease;
-}
-
-.input-field.active {
-    border-color: #4CAF50;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    padding-bottom: 1%;
+    margin-top: auto;
 }
 
 aside {
-    height: 100%; /* Высота в полный размер. Этот параметр можно убрать, если вы хотите выставлять высоту автоматически */
-    width: 10%; /* Ширина в полный размер */
+    min-height: 100vh; /* Высота в полный размер. Этот параметр можно убрать, если вы хотите выставлять высоту автоматически */
+    width: 10%;
+    min-width: 200px;
+    z-index: 1;
     position: absolute; /* Фиксированная позиция сайд-бара. Так он будет оставаться на месте при скроллинге */
-    z-index: 1; /* Сайд-бар будет поверх остальных элементов */
     top: 0; /* Сайдбар будет в самой верхней части страницы */
     left: 0;
     background-color: #111; /* Черный цвет фона (задан в виде кода) */
     overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
     padding-top: 2%;
     font-size: large;
-    margin: 0; /* Убираем отступы */
-    padding: 0; /* Убираем отступы */
-    border: 0; /* Убираем рамку */
 }
 
 body {
-    position: relative;
-    padding-left: 11%;
+    padding-left: 250px;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Комбинированный селектор - применяется ко всем элементам */
-header, footer, aside, body, .navbar, .video-container {
-    font-family: 'Calibri', sans-serif;
+a {
+    text-decoration: none;
 }
 
-/*Глобальные стили для хедеров на всём сайте*/
-header {
-    color: black;
-    padding-left: 1%;
-    padding-top: 1.2%;
+input {
+    border: 2px solid darkgrey;
+    border-radius: 2px;
+    outline: none;
 }
 
-h1 {
-    color: darkred
-}
-
-body {
-    background-color: #fffaed;
-}
-
-.bordered {
-    position:relative;
-}
-
+    input:focus {
+        border: 2px solid dimgrey;
+    }
